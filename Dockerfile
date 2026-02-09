@@ -18,7 +18,7 @@ RUN apt-file update
 #||  ln -sv /usr/bin/linux-perf                                                      /usr/bin/perf
 RUN test -e /usr/bin/perf
 
-COPY performance_metric_uploading_daemon/performance_metric_uploading_daemon.sh /usr/local/bin/performance_metric_uploading_daemon.sh
+COPY ./performance_metric_uploading_daemon.sh /usr/local/bin/performance_metric_uploading_daemon.sh
 RUN chmod -v +x /usr/local/bin/performance_metric_uploading_daemon.sh
 # TODO create looping script ?
 ENTRYPOINT ["/bin/bash", "-c", "while true; do /usr/local/bin/performance_metric_uploading_daemon.sh; sleep 3600; done"]
