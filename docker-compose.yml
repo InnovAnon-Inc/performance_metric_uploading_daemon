@@ -1,0 +1,17 @@
+services:
+
+  performance_metric_uploading_daemon: # handles -march= / -mtune= architecture-specific distribution
+    build:
+      context: .
+      dockerfile: performance_metric_uploading_daemon/Dockerfile
+    container_name: performance_metric_uploading_daemon
+    hostname: performance_metric_uploading_daemon.innovanon.com
+    privileged: true
+    pid: host
+    #network_mode: host
+    volumes:
+      - /:/host:ro
+    restart: unless-stopped
+#    depends_on:
+#      - performance_metric_merging_service
+
