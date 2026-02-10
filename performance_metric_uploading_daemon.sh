@@ -5,7 +5,7 @@ set -euxo pipefail
 
 # 1. Define variables
 PERF_BIN=$(ls /usr/bin/perf_* | head -n 1 || echo "perf")
-NEXUS_URL="http://performance_metric_merging_service:9321/submit"
+NEXUS_URL="http://performance_metric_merging_service.innovanon.com:9321/submit"
 STAGING_DIR="/tmp/chimera-staging"
 mkdir -p "$STAGING_DIR"
 
